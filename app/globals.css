@@ -18,16 +18,20 @@ html, body {
   position: relative;
   background: linear-gradient(180deg, rgba(15,20,40,0.7) 0%, rgba(11,16,32,0.85) 100%);
   border: 1px solid var(--color-border); border-radius: 6px; backdrop-filter: blur(12px);
-}
-.term-card::before {
-  content: "● ● ●"; position: absolute; top: 8px; left: 12px;
-  letter-spacing: 4px; color: var(--color-text-dim); font-size: 10px;
+  overflow: hidden;
 }
 .term-card-header {
+  position: relative;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 14px 8px 76px; border-bottom: 1px solid var(--color-border);
+  padding: 9px 14px 9px 50px; border-bottom: 1px solid var(--color-border);
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted); min-height: 36px;
+}
+.term-card-header::before {
+  content: "● ● ●"; position: absolute; top: 50%; left: 12px;
+  transform: translateY(-50%);
+  letter-spacing: 4px; color: var(--color-text-dim); font-size: 10px;
+  pointer-events: none;
 }
 .term-card-body { padding: 18px 20px; }
 .glow-orange { box-shadow: 0 0 28px rgba(255,107,43,0.2), inset 0 0 0 1px rgba(255,107,43,0.2); }

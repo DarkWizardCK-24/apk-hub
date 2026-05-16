@@ -123,7 +123,7 @@ export default function DashboardPage() {
                 transition={{ delay: i * 0.05 }}
                 className="term-card hover:border-[rgba(255,107,43,0.2)] transition-all"
               >
-                <div className="flex items-center gap-4 px-5 py-4 flex-wrap sm:flex-nowrap">
+                <div className="flex items-center gap-4 px-5 py-5 flex-wrap sm:flex-nowrap">
                   {/* Icon */}
                   <div
                     className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center border"

@@ -7,7 +7,7 @@ export default function Footer() {
           <span className="text-[var(--color-text-muted)]">deveco ecosystem</span>
         </span>
         <div className="flex items-center gap-4">
-          <a href="http://localhost:3000" className="text-[var(--color-neon-cyan)] hover:underline">↗ DevFolio</a>
+          <a href="https://dev-folio-two-rho.vercel.app/" className="text-[var(--color-neon-cyan)] hover:underline">↗ DevFolio</a>
           <a href="http://localhost:3001" className="hover:text-[var(--color-text-muted)] transition-colors">DevBlog</a>
           <a href="http://localhost:3006" className="hover:text-[var(--color-text-muted)] transition-colors">DevNotes</a>
         </div>

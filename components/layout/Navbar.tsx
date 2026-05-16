@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import { RiApps2Line, RiUpload2Line, RiDashboardLine, RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import AuthButton from '@/components/auth/AuthButton';
@@ -13,15 +12,18 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b border-[var(--color-border)] bg-[rgba(5,7,15,0.75)]">
       <div className="container-app flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/logo.png"
-            alt="APK Hub"
-            width={120}
-            height={48}
-            className="object-contain"
-            priority
-          />
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <div
+            className="w-7 h-7 rounded flex items-center justify-center text-sm"
+            style={{ background: 'rgba(255,107,43,0.12)', border: '1px solid rgba(255,107,43,0.3)' }}
+          >
+            📦
+          </div>
+          <span className="font-bold text-sm">
+            <span style={{ color: '#FF6B2B' }}>dev</span>
+            <span className="text-[var(--color-neon-cyan)]">apk</span>
+            <span className="text-[var(--color-text-dim)]">.hub</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -36,7 +38,7 @@ export default function Navbar() {
             <RiDashboardLine size={14} /> my apps
           </Link>
           <a
-            href="http://localhost:3000"
+            href="https://dev-folio-two-rho.vercel.app/"
             className="ml-2 px-3 py-1.5 text-xs border border-[var(--color-border)] rounded hover:border-[var(--color-neon-cyan)] hover:text-[var(--color-neon-cyan)] text-[var(--color-text-muted)] transition-colors"
           >
             ↗ DevFolio
@@ -62,6 +64,9 @@ export default function Navbar() {
           <Link href="/dashboard" onClick={() => setOpen(false)} className="flex items-center gap-2 px-6 py-3 text-sm text-[var(--color-text-muted)]">
             <RiDashboardLine size={14} /> my apps
           </Link>
+          <a href="http://localhost:3000" onClick={() => setOpen(false)} className="flex items-center gap-2 px-6 py-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-neon-cyan)]">
+            ↩ DevFolio
+          </a>
           <div className="px-6 py-3">
             <AuthButton />
           </div>

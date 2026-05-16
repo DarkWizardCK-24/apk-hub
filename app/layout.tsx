@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Navbar />
-        <main style={{ paddingTop: '64px', minHeight: '100vh' }}>
+        <main className="pt-16 min-h-screen">
           {children}
         </main>
         <Footer />
