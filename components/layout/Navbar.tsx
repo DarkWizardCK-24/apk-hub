@@ -64,7 +64,7 @@ export default function Navbar() {
           <Link href="/dashboard" onClick={() => setOpen(false)} className="flex items-center gap-2 px-6 py-3 text-sm text-[var(--color-text-muted)]">
             <RiDashboardLine size={14} /> my apps
           </Link>
-          <a href="http://localhost:3000" onClick={() => setOpen(false)} className="flex items-center gap-2 px-6 py-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-neon-cyan)]">
+          <a href="https://dev-folio-two-rho.vercel.app/" onClick={() => setOpen(false)} className="flex items-center gap-2 px-6 py-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-neon-cyan)]">
             ↩ DevFolio
           </a>
           <div className="px-6 py-3">

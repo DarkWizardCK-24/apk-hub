@@ -5,6 +5,10 @@ import { createClient } from '@/lib/supabase';
 import type { User } from '@supabase/supabase-js';
 import { RiGithubFill, RiLogoutBoxLine } from 'react-icons/ri';
 
+function getDevfolioUrl() {
+  return process.env.NEXT_PUBLIC_DEVFOLIO_URL || 'http://localhost:3000';
+}
+
 export default function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -18,11 +22,13 @@ export default function AuthButton() {
     return () => subscription.unsubscribe();
   }, []);
 
-  async function signIn() {
-    await sb.auth.signInWithOAuth({
-      provider: 'github',
-      options: { redirectTo: `${window.location.origin}/api/auth/callback` },
-    });
+  function signIn() {
+    const callbackUrl = `${window.location.origin}/api/auth/devfolio-callback`;
+    const state = window.location.pathname;
+    window.location.href =
+      `${getDevfolioUrl()}/api/auth/cross-app` +
+      `?redirect_to=${encodeURIComponent(callbackUrl)}` +
+      `&state=${encodeURIComponent(state)}`;
   }
 
   async function signOut() {
@@ -38,7 +44,7 @@ export default function AuthButton() {
         onClick={signIn}
         className="flex items-center gap-1.5 px-3 py-1.5 text-sm rounded border border-[var(--color-border)] text-[var(--color-text-muted)] hover:border-[var(--color-neon-orange)] hover:text-[var(--color-neon-orange)] transition-colors"
       >
-        <RiGithubFill size={14} /> sign in
+        <RiGithubFill size={14} /> sign in via DevFolio
       </button>
     );
   }
