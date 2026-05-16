@@ -7,6 +7,10 @@ import Footer from '@/components/layout/Footer';
 export const metadata: Metadata = {
   title: 'DevAPK Hub — Android builds, organized.',
   description: 'Upload, manage, and share Android APK builds. Part of the DevEco ecosystem.',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
